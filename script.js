@@ -1,9 +1,15 @@
 // const header = document.querySelector('header');                                //захватывают какие то ссылки на элементы header
-// const section = document.querySelector('section');                              //ссылки на section(откуда берется document)
+// const section = document.querySelector('section'); 
+  //console.log(cityName);//название города
+         
+        //for (let cityData in data[cityName]){
+          //console.log(cityData);//выводит номер массива
+         // for (let stats in cityData){
+           // console.log(stats);
+          //}
+        //}                            //ссылки на section(откуда берется document)
  const requestURL = 
 'https://jeetiss.github.io/covid19-russia/timeseries.json';    //сохранили ссылку в переменную
-// // var keys = Object.keys(requestURL);
-// // alert(keys);
 
 fetch(requestURL)
   .then((response) => {
@@ -12,23 +18,40 @@ fetch(requestURL)
   })
    .then((data) => {
     // console.log(data);
-
    for (let cityName in data){
-     //    console.log(cityName);
-     
-          // let cityData = data[cityName];
-          // console.log(cityData);
-
-          
-        }
-        let cityDataMoscow = data["Москва"];
-     //   console.log(cityDataMoscow);
-
-        cityDataMoscow.map(function(stats){
-        console.log(stats.confirmed);
-        })
-
+         
+           let cityData = data[cityName];//выдает массив объектов
+          //заводим переменную с название города
+           // console.log(cityData);
+          //  let stats = cityData;
+          //  console.log(stats);
+          cityData.map(function(stats){
+            //записываем год в переменную
+            //начальная статистика месяца
+            //console.log(stats);
+            day = stats.date;
+            let age = new Date(day).getFullYear();
+            сonsole.log(age);
+            // console.log(stats.date);
+            // console.log(stats.confirmed);
+            // console.log(stats.deaths);
+            // console.log(stats.recovered);
+          })
+        } 
 })
+
+
+
+
+//console.log(new Date('2020-03-22').getFullYear())
+//2020
+//     let cityDataMoscow = data["Москва"];
+    //  //   console.log(cityDataMoscow);
+
+    //     cityDataMoscow.map(function(stats){
+    //     console.log(stats.confirmed);
+    //     })
+
 //   data['Москва'].map(function(stats){
 //      console.log(stats.confirmed)
 //   }
