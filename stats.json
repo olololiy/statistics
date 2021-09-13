@@ -47,7 +47,7 @@
     { "date": "2020-05-05", "confirmed": "80115", "deaths": "816", "recovered": "7870" },
     { "date": "2020-05-06", "confirmed": "85973", "deaths": "866", "recovered": "8458" },
     { "date": "2020-05-07", "confirmed": "92676", "deaths": "905", "recovered": "9227" },
-    { "date": "2020-05-08", "confirmed": "98522", "deaths": "956", "recovered": "10259" },
+    { "date": "2020-05-08", "confirmed": "98522", "deaths": "956", "recovered": "10259" }
     ],
   "Московская область": [
     { "date": "2020-03-22", "confirmed": "35", "deaths": "0", "recovered": "1" },
@@ -161,6 +161,6 @@
     { "date": "2020-07-08", "confirmed": "59716", "deaths": "970", "recovered": "39550" },
     { "date": "2020-07-09", "confirmed": "59908", "deaths": "979", "recovered": "39922" },
     { "date": "2020-07-10", "confirmed": "60107", "deaths": "992", "recovered": "40299" },
-    { "date": "2020-07-11", "confirmed": "60295", "deaths": "996", "recovered": "40625" },
+    { "date": "2020-07-11", "confirmed": "60295", "deaths": "996", "recovered": "40625" }
       ]
 }

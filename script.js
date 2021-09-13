@@ -9,15 +9,15 @@
           //}
         //}                            //ссылки на section(откуда берется document)
  const requestURL = 
-'https://github.com/olololiy/statistics/blob/main/stats.json';    //сохранили ссылку в переменную
+'https://jeetiss.github.io/covid19-russia/timeseries.json';    //сохранили ссылку в переменную
 
 fetch(requestURL)
   .then((response) => {
-       console.log(response);
+     //  console.log(response);
     return response.json();
   })
    .then((data) => {
-     console.log(data);
+     //console.log(data);
    for (let cityName in data){
          //let cityName = data;
          console.log(cityName);
