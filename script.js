@@ -9,7 +9,7 @@
           //}
         //}                            //ссылки на section(откуда берется document)
  const requestURL = 
-'https://jeetiss.github.io/covid19-russia/timeseries.json';    //сохранили ссылку в переменную
+'https://raw.githubusercontent.com/olololiy/statistics/main/stats.json?token=APPSQVEYYGTC367CTM4XJ63BJCA7M';    //сохранили ссылку в переменную
 
 fetch(requestURL)
   .then((response) => {
