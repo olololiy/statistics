@@ -17,28 +17,31 @@ fetch(requestURL)
     return response.json();
   })
    .then((data) => {
-    // console.log(data);
+     //console.log(data);
    for (let cityName in data){
-         
+         //let cityName = data;
+         console.log(cityName);
            let cityData = data[cityName];//выдает массив объектов
+           
           //заводим переменную с название города
            // console.log(cityData);
           //  let stats = cityData;
           //  console.log(stats);
-          cityData.map(function(stats){
+        //  cityData.map(function(stats){
             //записываем год в переменную
             //начальная статистика месяца
             //console.log(stats);
-            day = stats.date;
-            let age = new Date(day).getFullYear();
-            сonsole.log(age);
+            // day = stats.date;
+            // let age = new Date(day).getFullYear();
+            // сonsole.log(age);
             // console.log(stats.date);
             // console.log(stats.confirmed);
             // console.log(stats.deaths);
             // console.log(stats.recovered);
-          })
-        } 
-})
+          }
+        })
+         
+// })
 
 
 
