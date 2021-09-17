@@ -8,8 +8,26 @@
            // console.log(stats);
           //}
         //}                            //ссылки на section(откуда берется document)
- const requestURL = 
+let currentDate
+let currentMonth;
+let currentYear;
+let currentCity; 
+
+let startConfirmed;
+let startDeath;
+let startRecovered;
+
+let finishConfirmed;
+let finishDeath;
+let finishRecoverd;
+
+let diffConfirmed;
+let diffDeath;
+let diffRecoverd;
+
+const requestURL = 
 'https://raw.githubusercontent.com/olololiy/statistics/main/stats.json?token=APPSQVEYYGTC367CTM4XJ63BJCA7M';    //сохранили ссылку в переменную
+
 
 fetch(requestURL)
   .then((response) => {
@@ -18,17 +36,76 @@ fetch(requestURL)
   })
    .then((data) => {
      //console.log(data);
-   for (let cityName in data){
+   for (currentCity in data){
          //let cityName = data;
-         console.log(cityName);
-           let cityData = data[cityName];//выдает массив объектов
+         console.log(currentCity);
+           let cityData = data[currentCity];//выдает массив объектов
+           cityData.map(function(stats){
+            //console.log(stats
+            currentDate = stats.date;
+          //  console.log(currentMonth);
+          if (currentMonth == undefined){
+            currentYear = new Date(currentDate).getFullYear();
+            currentMonth = new Date(currentDate).getMonth();
            
-          //заводим переменную с название города
-           // console.log(cityData);
-          //  let stats = cityData;
-          //  console.log(stats);
-        //  cityData.map(function(stats){
-            //записываем год в переменную
+            startConfirmed = finishConfirmed = stats.confirmed;
+            startDeath = finishDeath = stats.deaths;
+            startRecovered = finishRecoverd = stats.recovered;
+            //console.log(currentMonth);
+            //записываем все значения стартовые
+          }
+          else if(currentMonth == (new Date(currentDate).getMonth())){
+            finishConfirmed = stats.confirmed;
+            finishDeath = stats.deaths;
+            finishRecoverd = stats.recovered;
+            //обновляем finish
+          }
+          else{//(currentMonth != (new Date(currentDate).getMonth))
+            //выводим на экран разницу финиш и старт
+            //новые значения записываем в стар и финиш
+            diffConfirmed = finishConfirmed - startConfirmed;
+            diffDeath = finishDeath - startDeath;
+            diffRecoverd = finishRecoverd - startRecovered;
+           // console.log(diffRecoverd);
+            
+
+            currentYear = new Date(currentDate).getFullYear();
+            currentMonth = new Date(currentDate).getMonth();
+
+            startConfirmed = finishConfirmed = stats.confirmed;
+            startDeath = finishDeath = stats.deaths;
+            startRecovered = finishRecoverd = stats.recovered;
+
+            
+          }
+         
+          
+
+
+            // let year = new Date(currentDate).getYear();
+            // console.log(year);
+            
+            // if (currentMonth < (new Date(currentDate).getMonth)){
+            //   //выводим месяц
+            //   //обновляем месяц
+            //   //мапаем
+            // }
+            // else{
+            //   currentMonth = 2 ;}
+            //обновляем якобыфинишные значения
+   }) 
+  }
+})
+/*
+хватаем объект 
+записываем год в currentYear
+ 
+если месяц другой. То мы считаем разницу и выводим её
+записываем Month
+и все остальное
+*/
+      
+      //записываем год в переменную
             //начальная статистика месяца
             //console.log(stats);
             // day = stats.date;
@@ -38,10 +115,10 @@ fetch(requestURL)
             // console.log(stats.confirmed);
             // console.log(stats.deaths);
             // console.log(stats.recovered);
-          }
-        })
-         
-// })
+          //console.log(stats);
+// })  //заводим переменную с название города
+           // console.log(cityData);
+           // let stats = cityData;// что за бред
 
 
 
@@ -138,4 +215,3 @@ fetch(requestURL)
 // alert(Object.keys[1]);
 //var obj = {"success":"You are welcome"};
 //var keys = Object.keys(massib);
-//alert(keys[0])
