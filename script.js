@@ -53,17 +53,17 @@ function addRow(tableID) {
 
   var newCell = newRow.insertCell(3);
   // Append a text node to the cell
-  var newText = document.createTextNode(finishConfirmed);
+  var newText = document.createTextNode(diffConfirmed);
   newCell.appendChild(newText);
 
   var newCell = newRow.insertCell(4);
   // Append a text node to the cell
-  var newText = document.createTextNode(finishDeath);
+  var newText = document.createTextNode(diffDeath);
   newCell.appendChild(newText);
 
   var newCell = newRow.insertCell(5);
   // Append a text node to the cell
-  var newText = document.createTextNode(finishRecoverd);
+  var newText = document.createTextNode(diffRecoverd);
   newCell.appendChild(newText);
 }
 
@@ -118,8 +118,14 @@ fetch(requestURL)
             startConfirmed = finishConfirmed = stats.confirmed;
             startDeath = finishDeath = stats.deaths;
             startRecovered = finishRecoverd = stats.recovered;   
-          }
-         
+          }    
    }) 
+            diffConfirmed = finishConfirmed - startConfirmed;
+            diffDeath = finishDeath - startDeath;
+            diffRecoverd = finishRecoverd - startRecovered;
+            
+            // Call addRow() with the ID of a table
+            addRow('TableA');
+
   }
 })
