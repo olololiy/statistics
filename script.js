@@ -75,10 +75,10 @@ fetch(requestURL)
   })
    .then((data) => {
      //console.log(data);
-   for (currentCity in data){
+   for (city in data){
          //let cityName = data;
-         console.log(currentCity);
-           let cityData = data[currentCity];//выдает массив объектов
+         console.log(city);
+           let cityData = data[city];//выдает массив объектов
            cityData.map(function(stats){
             //console.log(stats
             currentDate = stats.date;
@@ -86,6 +86,7 @@ fetch(requestURL)
           if (currentMonth == undefined){
             currentYear = new Date(currentDate).getFullYear();
             currentMonth = new Date(currentDate).getMonth();
+            currentCity = city;
            
             startConfirmed = finishConfirmed = stats.confirmed;
             startDeath = finishDeath = stats.deaths;
@@ -112,12 +113,11 @@ fetch(requestURL)
 
             currentYear = new Date(currentDate).getFullYear();
             currentMonth = new Date(currentDate).getMonth();
+            currentCity = city;
 
             startConfirmed = finishConfirmed = stats.confirmed;
             startDeath = finishDeath = stats.deaths;
-            startRecovered = finishRecoverd = stats.recovered;
-
-            
+            startRecovered = finishRecoverd = stats.recovered;   
           }
          
    }) 
