@@ -26,7 +26,46 @@ let diffDeath;
 let diffRecoverd;
 
 const requestURL = 
-'https://raw.githubusercontent.com/olololiy/statistics/main/stats.json?token=APPSQVEYYGTC367CTM4XJ63BJCA7M';    //сохранили ссылку в переменную
+'https://raw.githubusercontent.com/olololiy/statistics/main/stats.json?token=APPSQVGX6XS5NBFMWR2SXPTBKRANG';  //сохранили ссылку в переменную
+
+function addRow(tableID) {
+  // Get a reference to the table
+  var tableRef = document.getElementById(tableID);
+
+  // Insert a row in the table at row index 0
+  var newRow = tableRef.insertRow(-1);
+
+  // Insert a cell in the row at index 0
+  var newCell = newRow.insertCell(0);
+  // Append a text node to the cell
+  var newText = document.createTextNode(currentCity);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(1);
+  // Append a text node to the cell
+  var newText = document.createTextNode(currentMonth + 1);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(2);
+  // Append a text node to the cell
+  var newText = document.createTextNode(currentYear);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(3);
+  // Append a text node to the cell
+  var newText = document.createTextNode(finishConfirmed);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(4);
+  // Append a text node to the cell
+  var newText = document.createTextNode(finishDeath);
+  newCell.appendChild(newText);
+
+  var newCell = newRow.insertCell(5);
+  // Append a text node to the cell
+  var newText = document.createTextNode(finishRecoverd);
+  newCell.appendChild(newText);
+}
 
 
 fetch(requestURL)
@@ -58,6 +97,7 @@ fetch(requestURL)
             finishConfirmed = stats.confirmed;
             finishDeath = stats.deaths;
             finishRecoverd = stats.recovered;
+            
             //обновляем finish
           }
           else{//(currentMonth != (new Date(currentDate).getMonth))
@@ -66,6 +106,9 @@ fetch(requestURL)
             diffConfirmed = finishConfirmed - startConfirmed;
             diffDeath = finishDeath - startDeath;
             diffRecoverd = finishRecoverd - startRecovered;
+            
+            // Call addRow() with the ID of a table
+            addRow('TableA');
 
             currentYear = new Date(currentDate).getFullYear();
             currentMonth = new Date(currentDate).getMonth();
@@ -76,6 +119,7 @@ fetch(requestURL)
 
             
           }
+         
    }) 
   }
 })
