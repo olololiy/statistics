@@ -1,13 +1,3 @@
-// const header = document.querySelector('header');                                //захватывают какие то ссылки на элементы header
-// const section = document.querySelector('section'); 
-  //console.log(cityName);//название города
-         
-        //for (let cityData in data[cityName]){
-          //console.log(cityData);//выводит номер массива
-         // for (let stats in cityData){
-           // console.log(stats);
-          //}
-        //}                            //ссылки на section(откуда берется document)
 let currentDate
 let currentMonth;
 let currentYear;
@@ -120,12 +110,11 @@ fetch(requestURL)
             startRecovered = finishRecoverd = stats.recovered;   
           }    
    }) 
-            diffConfirmed = finishConfirmed - startConfirmed;
-            diffDeath = finishDeath - startDeath;
-            diffRecoverd = finishRecoverd - startRecovered;
-            
-            // Call addRow() with the ID of a table
-            addRow('TableA');
+    diffConfirmed = finishConfirmed - startConfirmed;
+    diffDeath = finishDeath - startDeath;
+    diffRecoverd = finishRecoverd - startRecovered;
+    // Call addRow() with the ID of a table
+    addRow('TableA');
 
   }
 })
