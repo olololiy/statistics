@@ -1,0 +1,18 @@
+{
+  "Москва": [
+    { "date": "2020-03-22", "confirmed": "191", "deaths": "0", "recovered": "8" },
+    { "date": "2020-03-31", "confirmed": "1613", "deaths": "11", "recovered": "70" },
+    { "date": "2020-04-01", "confirmed": "1880", "deaths": "16", "recovered": "115" },
+    { "date": "2020-04-30", "confirmed": "53739", "deaths": "611", "recovered": "5135" },
+    { "date": "2020-05-01", "confirmed": "57300", "deaths": "658", "recovered": "5766" },
+    { "date": "2020-05-02", "confirmed": "62658", "deaths": "695", "recovered": "6374" }
+    ],
+  "Московская область": [
+    { "date": "2020-03-22", "confirmed": "35", "deaths": "0", "recovered": "1" },
+    { "date": "2020-03-31", "confirmed": "119", "deaths": "0", "recovered": "14" },
+    { "date": "2020-04-01", "confirmed": "134", "deaths": "1", "recovered": "17" },
+    { "date": "2020-04-30", "confirmed": "11710", "deaths": "93", "recovered": "430" },
+    { "date": "2020-05-01", "confirmed": "12507", "deaths": "109", "recovered": "458" },
+    { "date": "2020-05-02", "confirmed": "13314", "deaths": "109", "recovered": "503" }
+      ]
+}

@@ -1,9 +1,9 @@
-let currentDate
+let currentDate;
 let currentMonth;
 let currentYear;
 let currentCity; 
 
-let startConfirmed;
+let startConfirmed;//можно сразу типизовать
 let startDeath;
 let startRecovered;
 
@@ -15,15 +15,15 @@ let diffConfirmed;
 let diffDeath;
 let diffRecoverd;
 
-const requestURL = //'stats.json'
+const requestURL = 
 'https://jeetiss.github.io/covid19-russia/timeseries.json';
 
- //'https://raw.githubusercontent.com/olololiy/statistics/main/stats.json?token=APPSQVGX6XS5NBFMWR2SXPTBKRANG'; //сохранили ссылку в переменную
+// https://raw.githubusercontent.com/olololiy/statistics/main/stats.json?token=APPSQVGX6XS5NBFMWR2SXPTBKRANG//сохранили ссылку в переменную
 
 
 function addRow(tableID) {
   // Get a reference to the table
-  var tableRef = document.getElementById(tableID);
+  var tableRef = document.getElementById(tableID); //let в функции
 
   // Insert a row in the table at row index 0
   var newRow = tableRef.insertRow(-1);
@@ -113,12 +113,11 @@ fetch(requestURL)
             startRecovered = finishRecoverd = stats.recovered;   
           }    
    }) 
-    
-
-  }
-  diffConfirmed = finishConfirmed - startConfirmed;
+    diffConfirmed = finishConfirmed - startConfirmed;
     diffDeath = finishDeath - startDeath;
     diffRecoverd = finishRecoverd - startRecovered;
     // Call addRow() with the ID of a table
     addRow('TableA');
+
+  }
 })
